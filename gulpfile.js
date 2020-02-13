@@ -73,7 +73,7 @@ function modules() {
   return merge(bootstrap, fontAwesomeCSS, fontAwesomeWebfonts, jquery, jqueryEasing, magnificPopup);
 }
 
-// CSS task
+// // CSS task
 function css() {
   return gulp
     .src("./scss/**/*.scss")
@@ -83,18 +83,18 @@ function css() {
       includePaths: "./node_modules",
     }))
     .on("error", sass.logError)
-    .pipe(autoprefixer({
-      cascade: false
-    }))
-    .pipe(header(banner, {
-      pkg: pkg
-    }))
-    .pipe(gulp.dest("./css"))
-    .pipe(rename({
-      suffix: ".min"
-    }))
-    .pipe(cleanCSS())
-    .pipe(gulp.dest("./css"))
+    // .pipe(autoprefixer({
+    //   cascade: false
+    // }))
+    // .pipe(header(banner, {
+    //   pkg: pkg
+    // }))
+    // .pipe(gulp.dest("./css"))
+    // .pipe(rename({
+    //   suffix: ".min"
+    // }))
+    // .pipe(cleanCSS())
+    // .pipe(gulp.dest("./css"))
     .pipe(browsersync.stream());
 }
 
@@ -129,7 +129,7 @@ const build = gulp.series(vendor, gulp.parallel(css, js));
 const watch = gulp.series(build, gulp.parallel(watchFiles, browserSync));
 
 // Export tasks
-exports.css = css;
+// exports.css = css;
 exports.js = js;
 exports.clean = clean;
 exports.vendor = vendor;

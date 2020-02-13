@@ -1,6 +1,6 @@
 {
   "title": "Creative",
-  "name": "amingoreact_",
+  "name": "amingoreact",
   "version": "5.1.8",
   "scripts": {
     "start": "gulp watch"
